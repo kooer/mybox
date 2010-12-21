@@ -1,7 +1,8 @@
 #!/bin/bash
 SAVEIFS=$IFS
 IFS=$(echo -en "\n\b")
-dir='/home/kooer/book/newbook/b/'
+#dir='/home/kooer/book/newbook/b/'
+dir=$1
 files=`ls $dir`
 for v in $files
 do
