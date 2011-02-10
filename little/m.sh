@@ -1,7 +1,7 @@
 #!/bin/bash
 
 MAIL_TO="shafei1900@gmail.com"
-MAX_SIZE=$((512 * 1024))
+MAX_SIZE=$((15 * 1024 * 1024))
 
 SAVEIFS=$IFS
 IFS=$(echo -en "\n\b")
@@ -13,6 +13,13 @@ echo "mail to: $MAIL_TO"
 echo "max size of each file: $MAX_SIZE"
 echo "search directory: $dir"
 echo ""
+
+read -p "Continue? [Y|n] " answer
+if [ $answer ]; then
+    if [ $answer = "n" -o $answer = "N" ]; then
+        exit
+    fi
+fi
 
 for v in $files
 do
